@@ -1,0 +1,12 @@
+﻿@using Demo.BLL.Interfaces;
+
+@model RoleViewModel
+
+
+<div class="form-group">
+    <label class="col-form-label">Role Name</label>
+    <input asp-for="RoleName" class="form-control" />
+    <span asp-validation-for="RoleName" class="text-danger"></span>
+</div>
+<input type="submit" value="Save" class=" btn btn-primary" />
+<a asp-action="Index" class="btn btn-light">Back To List</a>

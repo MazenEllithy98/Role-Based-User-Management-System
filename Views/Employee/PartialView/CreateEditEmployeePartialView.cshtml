@@ -1,0 +1,65 @@
+﻿@using Demo.BLL.Interfaces;
+
+@model EmployeeViewModel
+@inject IUnitOfWork unitOfWork
+
+@{
+    var department = new SelectList(await unitOfWork.DepartmentRepository.GetAll(), "ID", "Name");
+}
+<div class="form-group">
+    <label class="col-form-label">Name</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Age</label>
+    <input asp-for="Age" class="form-control" />
+    <span asp-validation-for="Age" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Address</label>
+    <input asp-for="Address" class="form-control" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Email</label>
+    <input asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Phone</label>
+    <input asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Salary</label>
+    <input asp-for="Salary" class="form-control" />
+    <span asp-validation-for="Salary" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">IsActive</label>
+    <input asp-for="IsActive" class="form-control" />
+    <span asp-validation-for="IsActive" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">HireDate</label>
+    <input asp-for="HireDate" class="form-control" />
+    <span asp-validation-for="HireDate" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Department"></label>
+    <select class="form-control"asp-for="DepartmentsID" asp-items="@department">
+        <option value="@null">--Select Department--</option>
+    </select>
+
+</div>
+
+<div class="form-group" >
+    <label class="col-form-label">Image</label>
+    <input class="form-control" type="file" asp-for="Image"/>
+
+</div>
+
+<input type="submit" value="Save" class=" btn btn-primary" />
+<a asp-action="Index" class="btn btn-light">Back To List</a>

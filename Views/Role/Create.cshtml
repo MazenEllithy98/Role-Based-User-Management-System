@@ -1,0 +1,20 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Crete Role </h1>
+<br />
+<br />
+<form asp-action="Create">
+    <partial name="PartialViews/CreateEditRolePartialView" />
+
+</form>
+
+
+@section ValidationScriptSection {
+    @*    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*@
+    <partial name="_ValidationScriptsPartial" />
+}
